@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-                result.setText(String.valueOf(sum));
+                result.setText("The result is: " + String.valueOf(sum));
 
 
 
