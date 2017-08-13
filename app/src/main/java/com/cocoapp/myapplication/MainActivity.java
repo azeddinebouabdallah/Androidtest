@@ -1,5 +1,6 @@
 package com.cocoapp.myapplication;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,30 +16,29 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final EditText number1 = (EditText) findViewById(R.id.n1Input);
-        final EditText number2 = (EditText) findViewById(R.id.n2Input);
-        final TextView result = (TextView) findViewById(R.id.result);
-        Button Bu = (Button) findViewById(R.id.sumButton);
+        EditText number1 = (EditText) findViewById(R.id.n1Input);
+        EditText number2 = (EditText) findViewById(R.id.n2Input);
+        TextView result = (TextView) findViewById(R.id.result);
 
-        Bu.setOnClickListener(new View.OnClickListener(){
+        int n1 = Integer.parseInt(number1.getText().toString());
+        int n2 = Integer.parseInt(number2.getText().toString());
 
-            @Override
-            public void onClick(View view) {
+    public void calculatekSum(View view) {
 
-                int sum = Integer.parseInt( number1.getText().toString());
-                int n1 = Integer.parseInt( number2.getText().toString());
-                sum += n1;
+        Intent myIntent = new Intent(this, SecondActivity.class);
+        Bundle myBundle = new Bundle();
 
+        myBundle.putInt("number1", n1);
+        myBundle.putInt("number2", n2);
 
-
-                result.setText("The result is: " + String.valueOf(sum));
-
+        myIntent.putExtras(myBundle);
 
 
-
-            }
-        });
-
+        startActivity(myIntent);
 
     }
+
+
 }
+}
+

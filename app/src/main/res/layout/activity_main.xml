@@ -70,7 +70,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="0.1"
-            android:text="Sum" />
+            android:text="Sum"
+            android:onClick="calculateSum"/>
     </LinearLayout>
 
     <TextView
