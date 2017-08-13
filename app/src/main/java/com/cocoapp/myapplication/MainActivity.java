@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -34,10 +35,16 @@ public class MainActivity extends AppCompatActivity {
         myBundle.putInt("number1", n1);
         myBundle.putInt("number2", n2);
 
+        try{
+
         myIntent.putExtras(myBundle);
-
-
         startActivity(myIntent);
+
+        } catch (Exception e){
+
+            Toast.makeText(this, "Error in Intent" , Toast.LENGTH_LONG).show();
+
+        }
 
     }
 }
