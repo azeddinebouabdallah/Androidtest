@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void calculateSum(View view) {
-        Intent myIntent = new Intent(this, SecondActivity.class);
+        Intent myIntent = new Intent(MainActivity.this, SecondActivity.class);
         Bundle myBundle = new Bundle();
         EditText num1 = (EditText) findViewById(R.id.n1Input);
         EditText num2 = (EditText) findViewById(R.id.n2Input);
@@ -34,17 +34,9 @@ public class MainActivity extends AppCompatActivity {
 
         myBundle.putInt("number1", n1);
         myBundle.putInt("number2", n2);
-
-        try{
-
         myIntent.putExtras(myBundle);
+
         startActivity(myIntent);
-
-        } catch (Exception e){
-
-            Toast.makeText(this, "Error in Intent" , Toast.LENGTH_LONG).show();
-
-        }
 
     }
 }

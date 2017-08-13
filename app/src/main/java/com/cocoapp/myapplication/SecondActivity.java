@@ -13,11 +13,13 @@ import android.widget.TextView;
 
 public class SecondActivity extends AppCompatActivity {
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
-/*
+
         Bundle myBundle = getIntent().getExtras();
 
         int sum = myBundle.getInt("number1");
@@ -25,7 +27,7 @@ public class SecondActivity extends AppCompatActivity {
 
         TextView result = (TextView) findViewById(R.id.result);
         Button myButton = (Button) findViewById(R.id.buttonReturn);
-        final Intent myIntent = new Intent(this, MainActivity.class);
+        final Intent myIntent = new Intent(SecondActivity.this, MainActivity.class);
         sum += number2;
         result.setText(String.valueOf(sum));
 
@@ -42,7 +44,7 @@ public class SecondActivity extends AppCompatActivity {
 
 
 
-*/
+
 
 
     }
